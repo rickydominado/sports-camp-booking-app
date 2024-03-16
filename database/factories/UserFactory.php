@@ -41,4 +41,16 @@ class UserFactory extends Factory
             'email_verified_at' => null,
         ]);
     }
+
+    /**
+     * Indicate that the user is an admin.
+     */
+    public function suspended(): Factory
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'is_admin' => true,
+            ];
+        });
+    }
 }
